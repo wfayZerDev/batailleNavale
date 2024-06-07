@@ -112,6 +112,54 @@
             </objects>
             <point key="canvasLocation" x="1838.9312977099237" y="890.84507042253529"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="3VG-zi-kgw">
+            <objects>
+                <viewController id="The-cX-mBe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h6B-gE-7OU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONGRATULATION !!! YOU WIN CAPTAIN SPARROW" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUa-0n-Zlv">
+                                <rect key="frame" x="8" y="189" width="377" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vsb-TG-IHe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9E-yp-0Zn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2787.0229007633588" y="923.94366197183103"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e7F-vH-rmz">
+            <objects>
+                <viewController id="QV2-kv-IIa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e1F-FW-jOl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOOOOSER !!! YOU LOST THE GAME, YOUR SHIP IS NOW SINKING :(" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeJ-lR-Ucx">
+                                <rect key="frame" x="0.0" y="190" width="393" height="182"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KTw-Jm-hVj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OCc-DA-qHp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3712.2137404580153" y="944.36619718309862"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="pRC-G6-ilH">
             <objects>
