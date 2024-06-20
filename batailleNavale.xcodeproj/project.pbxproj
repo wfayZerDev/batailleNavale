@@ -16,6 +16,7 @@
 		38089C042C12F08300B787DA /* batailleNavaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38089C032C12F08300B787DA /* batailleNavaleTests.swift */; };
 		38089C0E2C12F08300B787DA /* batailleNavaleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38089C0D2C12F08300B787DA /* batailleNavaleUITests.swift */; };
 		38089C102C12F08300B787DA /* batailleNavaleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38089C0F2C12F08300B787DA /* batailleNavaleUITestsLaunchTests.swift */; };
+		38089C1D2C1319FB00B787DA /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38089C1C2C1319FB00B787DA /* Battle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		38089C092C12F08300B787DA /* batailleNavaleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = batailleNavaleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38089C0D2C12F08300B787DA /* batailleNavaleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = batailleNavaleUITests.swift; sourceTree = "<group>"; };
 		38089C0F2C12F08300B787DA /* batailleNavaleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = batailleNavaleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		38089C1C2C1319FB00B787DA /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				38089BEE2C12F08100B787DA /* SceneDelegate.swift */,
 				38089BF02C12F08100B787DA /* ViewController.swift */,
 				38089BF22C12F08100B787DA /* Main.storyboard */,
+				38089C1C2C1319FB00B787DA /* Battle.swift */,
 				38089BF52C12F08300B787DA /* Assets.xcassets */,
 				38089BF72C12F08300B787DA /* LaunchScreen.storyboard */,
 				38089BFA2C12F08300B787DA /* Info.plist */,
@@ -261,6 +264,7 @@
 				38089BF12C12F08100B787DA /* ViewController.swift in Sources */,
 				38089BED2C12F08100B787DA /* AppDelegate.swift in Sources */,
 				38089BEF2C12F08100B787DA /* SceneDelegate.swift in Sources */,
+				38089C1D2C1319FB00B787DA /* Battle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
