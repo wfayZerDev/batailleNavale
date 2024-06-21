@@ -23,7 +23,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Suivant"/>
                                 <connections>
                                     <action selector="go:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qZX-D9-HGi"/>
-                                    <segue destination="6oY-j4-clG" kind="show" identifier="NextSegue" id="B42-Bt-mbd"/>
+                                    <segue destination="6oY-j4-clG" kind="show" identifier="Play" id="B42-Bt-mbd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfM-XZ-Aud">
@@ -260,7 +260,7 @@
         <!--Battle View Controller-->
         <scene sceneID="l6D-8n-3Vs">
             <objects>
-                <viewController id="6oY-j4-clG" customClass="BattleViewController" customModule="batailleNavale" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Play" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6oY-j4-clG" customClass="BattleViewController" customModule="batailleNavale" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2CA-YP-uaG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -496,6 +496,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6MJ-5c-zaq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1735" y="18"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="H67-Zn-kfv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9At-kM-9kX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="End" id="Qg4-KZ-1IC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0NY-nY-oxA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Lfv-9T-SIi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2583" y="10"/>
         </scene>
     </scenes>
     <resources>

@@ -118,13 +118,13 @@ class ViewController: UIViewController {
     
     @IBAction func go(_ sender: Any) {
         // Appeler le segue pour charger l'écran suivant
-        performSegue(withIdentifier: "NextSegue", sender: self)
+        performSegue(withIdentifier: "Play", sender: self)
     }
     
     // Méthode appelée avant de passer à la prochaine vue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Vérifiez si le segue est celui que vous attendez
-        if segue.identifier == "NextSegue" {
+        if segue.identifier == "Play" {
             // Accédez au contrôleur de vue de destination
             if let nextViewController = segue.destination as? BattleViewController {
                 // Passez les données des bateaux désactivés à la prochaine vue
