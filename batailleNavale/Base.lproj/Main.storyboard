@@ -23,7 +23,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Suivant"/>
                                 <connections>
                                     <action selector="go:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qZX-D9-HGi"/>
-                                    <segue destination="6oY-j4-clG" kind="show" identifier="Play" id="B42-Bt-mbd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfM-XZ-Aud">
@@ -500,7 +499,6 @@
         <!--View Controller-->
         <scene sceneID="H67-Zn-kfv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9At-kM-9kX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="End" id="Qg4-KZ-1IC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0NY-nY-oxA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -509,6 +507,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9At-kM-9kX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2583" y="10"/>
         </scene>

@@ -117,8 +117,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func go(_ sender: Any) {
-        // Appeler le segue pour charger l'écran suivant
-        performSegue(withIdentifier: "Play", sender: self)
+        var nextViewController = self.storyboard?.instantiateViewController(identifier: "Play") as! BattleViewController
+        nextViewController.ships = ships
+        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     // Méthode appelée avant de passer à la prochaine vue
