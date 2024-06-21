@@ -9,7 +9,7 @@ import UIKit
 
 class BattleViewController: UIViewController {
     var ships: [Ship] = []
-
+    
     // Lien entre btn et code PS: je sais il y avait mieux
     @IBOutlet weak var p1_1: UIButton!
     @IBOutlet weak var p1_2: UIButton!
@@ -31,10 +31,11 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var p4_3: UIButton!
     @IBOutlet weak var p4_4: UIButton!
     @IBOutlet weak var p4_5: UIButton!
-
+    
     // Collection pour stocker tous les boutons
     var buttons: [UIButton] = []
-
+    var hitButtons: [UIButton] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,18 +64,51 @@ class BattleViewController: UIViewController {
             sender.backgroundColor = UIColor.gray
             print("Button with tag \(tag) pressed [GRAY]")
         }
+        
+        // Désactivez le bouton après avoir été pressé
         sender.isEnabled = false
+        
+        // Ajoutez le bouton touché à la liste des boutons touchés
+        hitButtons.append(sender)
+        
+        // Vérifiez si toutes les positions des bateaux ont été touchées
+        checkWinCondition()
     }
     
     // Vérifiez si le bouton correspond à une position d'un bateau
     func isShipPosition(button: UIButton) -> Bool {
-            for ship in ships {
-                for positionButton in ship.positions {
-                    if positionButton.tag == button.tag {
-                        return true
-                    }
+        for ship in ships {
+            for positionButton in ship.positions {
+                if positionButton.tag == button.tag {
+                    return true
                 }
             }
-            return false
+        }
+        return false
+    }
+    // Vérifiez si toutes les positions des bateaux ont été touchées
+    func checkWinCondition() {
+        for ship in ships {
+            var shipHitCount = 0
+            for positionButton in ship.positions {
+                if hitButtons.contains(where: { $0.tag == positionButton.tag }) {
+                    shipHitCount += 1
+                }
+            }
+            if shipHitCount == ship.positions.count {
+                print("win")
+                disableRemainingButtons()
+            }
         }
     }
+    
+    // Désactiver les boutons restants et les rendre noirs
+    func disableRemainingButtons() {
+        for button in buttons {
+            if !hitButtons.contains(button) {
+                button.isEnabled = false
+                button.backgroundColor = UIColor.black
+            }
+        }
+    }
+}
