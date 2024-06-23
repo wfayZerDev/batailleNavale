@@ -86,6 +86,7 @@ class BattleViewController: UIViewController {
         }
         return false
     }
+    
     // Vérifiez si toutes les positions des bateaux ont été touchées
     func checkWinCondition() {
         for ship in ships {
@@ -98,14 +99,23 @@ class BattleViewController: UIViewController {
             if shipHitCount == ship.positions.count {
                 print("win")
                 disableRemainingButtons()
+                var nextViewController = self.storyboard?.instantiateViewController(identifier: "WinSegue") as! BattleHardViewController
+                self.navigationController?.pushViewController(nextViewController, animated: true)
             }
         }
     }
     
-    // Désactiver les boutons restants et les rendre noirs
+    // Méthode appelée avant de passer à la prochaine vue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "WinSegue" {
+            // Configurez le contrôleur de vue de destination si nécessaire
+        }
+    }
+    
+    // Fonction pour désactiver les boutons restants
     func disableRemainingButtons() {
         for button in buttons {
-            if !hitButtons.contains(button) {
+            if button.isEnabled {
                 button.isEnabled = false
                 button.backgroundColor = UIColor.black
             }
