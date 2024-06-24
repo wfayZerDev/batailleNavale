@@ -63,22 +63,6 @@ class BattleViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        // Incrémentez le nombre de coups
-        moveCount += 1
-        print("Move count: \(moveCount)")
-        
-        // Mettez à jour le label des coups restants
-        updateMovesRemainingLabel()
-        
-        // Vérifiez si le nombre maximum de coups est atteint
-        if moveCount > maxMoves {
-            print("Maximum number of moves reached. You lose!")
-            disableAllButtons()
-            let nextViewController = self.storyboard?.instantiateViewController(identifier: "LoseSegue") as! BattleHardViewController
-            self.navigationController?.pushViewController(nextViewController, animated: true)
-            return
-        }
-        
         // Identifiez quel bouton a été pressé en utilisant son tag
         let tag = sender.tag
         print("Button with tag \(tag) pressed")
@@ -99,7 +83,28 @@ class BattleViewController: UIViewController {
         hitButtons.append(sender)
         
         // Vérifiez si toutes les positions des bateaux ont été touchées
-        checkWinCondition()
+        if checkWinCondition() {
+            print("win")
+            disableRemainingButtons()
+            let nextViewController = self.storyboard?.instantiateViewController(identifier: "WinSegue") as! BattleHardViewController
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+            return
+        }
+        
+        // Incrémentez le nombre de coups
+        moveCount += 1
+        print("Move count: \(moveCount)")
+        
+        // Mettez à jour le label des coups restants
+        updateMovesRemainingLabel()
+        
+        // Vérifiez si le nombre maximum de coups est atteint
+        if moveCount > maxMoves {
+            print("Maximum number of moves reached. You lose!")
+            disableAllButtons()
+            let nextViewController = self.storyboard?.instantiateViewController(identifier: "LoseSegue") as! BattleHardViewController
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+        }
     }
     
     // Vérifiez si le bouton correspond à une position d'un bateau
@@ -115,7 +120,7 @@ class BattleViewController: UIViewController {
     }
     
     // Vérifiez si toutes les positions des bateaux ont été touchées
-    func checkWinCondition() {
+    func checkWinCondition() -> Bool {
         for ship in ships {
             var shipHitCount = 0
             for positionButton in ship.positions {
@@ -123,14 +128,11 @@ class BattleViewController: UIViewController {
                     shipHitCount += 1
                 }
             }
-            if shipHitCount == ship.positions.count {
-                print("win")
-                disableRemainingButtons()
-                let nextViewController = self.storyboard?.instantiateViewController(identifier: "WinSegue") as! BattleHardViewController
-                self.navigationController?.pushViewController(nextViewController, animated: true)
-                return
+            if shipHitCount != ship.positions.count {
+                return false
             }
         }
+        return true
     }
     
     // Méthode appelée avant de passer à la prochaine vue
@@ -160,7 +162,7 @@ class BattleViewController: UIViewController {
     // Mettez à jour le label des coups restants
     func updateMovesRemainingLabel() {
         let movesRemaining = maxMoves + 1 - moveCount
-        movesRemainingLabel.text = "Shots remaining : \(movesRemaining)"
+        movesRemainingLabel.text = "Shots remaining: \(movesRemaining)"
     }
     
     // Action pour le bouton "Restart"
