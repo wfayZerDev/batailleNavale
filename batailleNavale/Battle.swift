@@ -35,9 +35,17 @@ class BattleViewController: UIViewController {
     // Collection pour stocker tous les boutons
     var buttons: [UIButton] = []
     var hitButtons: [UIButton] = []
+    var moveCount = 0
+    let maxMoves = 6
+    
+    // Outlet pour le label des coups restants
+    @IBOutlet weak var movesRemainingLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Masquer le bouton "Back"
+        self.navigationItem.hidesBackButton = true
         
         // Ajouter tous les boutons dans la collection
         buttons = [p1_1, p1_2, p1_3, p1_4, p1_5,
@@ -49,9 +57,28 @@ class BattleViewController: UIViewController {
         for (index, button) in buttons.enumerated() {
             button.tag = index + 1 // Les tags commencent à 1
         }
+        
+        // Initialiser le label avec le nombre de coups restants
+        updateMovesRemainingLabel()
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
+        // Incrémentez le nombre de coups
+        moveCount += 1
+        print("Move count: \(moveCount)")
+        
+        // Mettez à jour le label des coups restants
+        updateMovesRemainingLabel()
+        
+        // Vérifiez si le nombre maximum de coups est atteint
+        if moveCount > maxMoves {
+            print("Maximum number of moves reached. You lose!")
+            disableAllButtons()
+            let nextViewController = self.storyboard?.instantiateViewController(identifier: "LoseSegue") as! BattleHardViewController
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+            return
+        }
+        
         // Identifiez quel bouton a été pressé en utilisant son tag
         let tag = sender.tag
         print("Button with tag \(tag) pressed")
@@ -99,8 +126,9 @@ class BattleViewController: UIViewController {
             if shipHitCount == ship.positions.count {
                 print("win")
                 disableRemainingButtons()
-                var nextViewController = self.storyboard?.instantiateViewController(identifier: "WinSegue") as! BattleHardViewController
+                let nextViewController = self.storyboard?.instantiateViewController(identifier: "WinSegue") as! BattleHardViewController
                 self.navigationController?.pushViewController(nextViewController, animated: true)
+                return
             }
         }
     }
@@ -108,7 +136,6 @@ class BattleViewController: UIViewController {
     // Méthode appelée avant de passer à la prochaine vue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "WinSegue" {
-            // Configurez le contrôleur de vue de destination si nécessaire
         }
     }
     
@@ -120,5 +147,25 @@ class BattleViewController: UIViewController {
                 button.backgroundColor = UIColor.black
             }
         }
+    }
+    
+    // Fonction pour désactiver tous les boutons
+    func disableAllButtons() {
+        for button in buttons {
+            button.isEnabled = false
+            button.backgroundColor = UIColor.black
+        }
+    }
+    
+    // Mettez à jour le label des coups restants
+    func updateMovesRemainingLabel() {
+        let movesRemaining = maxMoves + 1 - moveCount
+        movesRemainingLabel.text = "Shots remaining : \(movesRemaining)"
+    }
+    
+    // Action pour le bouton "Restart"
+    @IBAction func restartButtonPressed(_ sender: UIButton) {
+        // Retourner à l'écran de démarrage
+        navigationController?.popToRootViewController(animated: true)
     }
 }

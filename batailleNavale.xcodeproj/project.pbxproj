@@ -18,6 +18,7 @@
 		38089C102C12F08300B787DA /* batailleNavaleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38089C0F2C12F08300B787DA /* batailleNavaleUITestsLaunchTests.swift */; };
 		38089C1D2C1319FB00B787DA /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38089C1C2C1319FB00B787DA /* Battle.swift */; };
 		388FD12D2C25D1770058A6CC /* BattleHard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FD12C2C25D1770058A6CC /* BattleHard.swift */; };
+		388FD12F2C28600E0058A6CC /* ViewHardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FD12E2C28600D0058A6CC /* ViewHardController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		38089C0F2C12F08300B787DA /* batailleNavaleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = batailleNavaleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		38089C1C2C1319FB00B787DA /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 		388FD12C2C25D1770058A6CC /* BattleHard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleHard.swift; sourceTree = "<group>"; };
+		388FD12E2C28600D0058A6CC /* ViewHardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHardController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				38089BEC2C12F08100B787DA /* AppDelegate.swift */,
 				38089BEE2C12F08100B787DA /* SceneDelegate.swift */,
 				38089BF02C12F08100B787DA /* ViewController.swift */,
+				388FD12E2C28600D0058A6CC /* ViewHardController.swift */,
 				38089BF22C12F08100B787DA /* Main.storyboard */,
 				38089C1C2C1319FB00B787DA /* Battle.swift */,
 				388FD12C2C25D1770058A6CC /* BattleHard.swift */,
@@ -267,6 +270,7 @@
 				38089BF12C12F08100B787DA /* ViewController.swift in Sources */,
 				388FD12D2C25D1770058A6CC /* BattleHard.swift in Sources */,
 				38089BED2C12F08100B787DA /* AppDelegate.swift in Sources */,
+				388FD12F2C28600E0058A6CC /* ViewHardController.swift in Sources */,
 				38089BEF2C12F08100B787DA /* SceneDelegate.swift in Sources */,
 				38089C1D2C1319FB00B787DA /* Battle.swift in Sources */,
 			);
@@ -453,11 +457,12 @@
 				DEVELOPMENT_TEAM = FCRBLG7A4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = batailleNavale/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -481,11 +486,12 @@
 				DEVELOPMENT_TEAM = FCRBLG7A4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = batailleNavale/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
