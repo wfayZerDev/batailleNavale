@@ -1,17 +1,17 @@
 //
-//  ViewController.swift
+//  ViewHardController.swift
 //  batailleNavale
 //
-//  Created by Lilian on 07/06/2024.
+//  Created by Lilian on 23/06/2024.
 //
 
 import UIKit
 
-struct Ship {
+struct ShipHard {
     var positions: [UIButton]
 }
 
-class ViewController: UIViewController {
+class ViewHardController: UIViewController {
     
     // Lien entre btn et code
     @IBOutlet weak var p1_1: UIButton!
@@ -66,13 +66,13 @@ class ViewController: UIViewController {
         print("Button with tag \(tag) pressed")
         
         // Vérifiez si le bouton peut être désactivé
-        if disabledButtons.count < 3 && canBeDisabled(button: sender) {
+        if disabledButtons.count < 1 && canBeDisabled(button: sender) {
             // Désactiver le bouton pressé
             sender.isEnabled = false
             disabledButtons.append(sender)
             
             // Vérifier si trois boutons ont été désactivés
-            if disabledButtons.count == 3 {
+            if disabledButtons.count == 1 {
                 // Activer le bouton pour passer à la page suivante
                 nextPageButton.isEnabled = true
                 
@@ -134,3 +134,4 @@ class ViewController: UIViewController {
         }
     }
 }
+
